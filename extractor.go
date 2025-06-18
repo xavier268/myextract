@@ -67,7 +67,7 @@ func (e *Extractor) SetSystemPrompt(systInstr string) *Extractor {
 // Utilise tous les fichiers uploadés dans l'extractor
 func (e *Extractor) Extract(schema *genai.Schema, prompt string) (result string, err error) {
 	var config *genai.GenerateContentConfig
-	// reponse en json si schema specifié
+	// response in json if schema specified
 	if schema != nil {
 		config = &genai.GenerateContentConfig{
 			ResponseMIMEType: "application/json",
@@ -131,7 +131,7 @@ func (e *Extractor) Close() error {
 // Upload a file from local path on computer.
 // *.docx files have their text extracted first.
 // *.txt files are sent as is.
-// *.PDF files are identified and transfered as is.
+// *.PDF files are identified and transferred as is.
 // Other files generate an error (for the moment ...)
 func (e *Extractor) Upload(filePath string) error {
 	// Convert to absolute path
